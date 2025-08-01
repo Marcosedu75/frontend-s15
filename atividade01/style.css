@@ -1,0 +1,84 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Container do Grid */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* Áreas */
+.header {
+  grid-area: header;
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.menu {
+  grid-area: menu;
+  background-color: #ecf0f1;
+  padding: 20px;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.main {
+  grid-area: main;
+  padding: 20px;
+  background-color: white;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "header"
+      "menu"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+
+  .menu {
+    text-align: center;
+  }
+}
